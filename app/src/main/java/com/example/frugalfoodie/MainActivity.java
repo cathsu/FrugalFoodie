@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 
 
+import com.example.frugalfoodie.Admin.AdminMenuActivity;
 import com.example.frugalfoodie.DB.UserDAO;
 import com.example.frugalfoodie.DB.FFRoom;
 import com.example.frugalfoodie.DB.User;
@@ -19,11 +20,15 @@ import com.example.frugalfoodie.DB.User;
 import androidx.appcompat.app.AlertDialog;
 
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Used for LogCat
+    private String TAG = "MAIN_ACTIVITY_TAG";
 
     /**Variables needed for admin log in */
     public static final String admin_user = "Admin";
@@ -34,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Log.d(TAG, "Inside of main activity");
 
 
         Button login_button = findViewById(R.id.loginbutton_main);
@@ -54,15 +61,15 @@ public class MainActivity extends AppCompatActivity {
 
                 //TODO: make Admin menu
 
-                 //A Loop to check if the Admin is logging in or not, if log in is successful a welcome message appears containing the Admin's name
-               // if(username.equals(MainActivity.admin_user) && password.equals(MainActivity.admin_password))
-               // {
-                    //Intent intent = new Intent(MainActivity.this, AdminMenu.class);
-                    //startActivity(intent);
-                   // is_true= true;
-               // }
+                // A Loop to check if the Admin is logging in or not, if log in is successful a welcome message appears containing the Admin's name
+                if(username.equals(MainActivity.admin_user) && password.equals(MainActivity.admin_password))
+                {
+                    Intent intent = new Intent(MainActivity.this, AdminMenuActivity.class);
+                    startActivity(intent);
+                    is_true= true;
+                }
 
-                //TODO: Connect to USER PAGE TO SEARCH
+
                 UserDAO dao = FFRoom.getInstance(MainActivity.this).userDAO();
                 User user1 = dao.loginUser(username, password);
 

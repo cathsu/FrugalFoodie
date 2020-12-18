@@ -14,12 +14,12 @@ Eliminating indecisiveness.
 
 ## Project Requirements
 
-- [ ] Must use Git
-- [ ] Must use Git project boards
-- [ ] Must have persistent data
+- [x] Must use Git
+- [x] Must use Git project boards
+- [x] Must have persistent data
 
-- [ ] Multiple access level (e.g. a normal user and an admin user)
-- [ ] Must have a central location to allow users to share information. e.g. if userA logs in and posts a picture, userB should be able to login and view that picture. This can be accomplished by using creating a web API or by using a service like Firebase
+- [x] Multiple access level (e.g. a normal user and an admin user)
+- [x] Must have a central location to allow users to share information. e.g. if userA logs in and posts a picture, userB should be able to login and view that picture. This can be accomplished by using creating a web API or by using a service like Firebase
 
 
 ## Project Board
@@ -31,8 +31,8 @@ https://github.com/users/charliekid/projects/1
 > As a user I want to login so I can have my own account
 
 **How will it be tested**:
-- [ ] Unit tests for username verification and password
-- [ ] Instrumented test to verify extras
+- [x] Unit tests for username verification and password
+- [x] Instrumented test to verify extras
 
 Notes: 
 - This is necessary for the rest of the app to function so it is the highest priority
@@ -54,7 +54,7 @@ Notes:
 > Set up the database.
 
 **How will it be tested**:
-- [ ] Create a test where we ensure items are CRUDing on the database. 
+- [x] Create a test where we ensure items are CRUDing on the database.
 
 Notes: 
 - Debbie will set up the skeleton of the DB and Cathy will help with queries / model classes
@@ -64,37 +64,61 @@ Notes:
 > As a user I want to be able to select ingredients that are on sale
 
 **How will it be tested**:
-- [ ] Check against the txt file and ensure data is correct
+- [ ] 
 
 Notes: 
 - Backend
 ***
 ## Iteration 2 ()
 
-## Iteration 3 ()
+**User Story**: View All Ingredients (from the ads) - Cathy
+> As a user I want to search weekly store ads so I can accomplish searching for a recipe based off of sale items.
 
-## Iteration 4 ()
+**How will it be tested**:
+- [x] This is a UI. No test required.
 
-## User Stories
+Notes: 
+- Front End - RecyclerView
+***
 
+**User Story**: Hard Code Initial Recipes - Debbie
+> Add recipes to the Database
+
+**How will it be tested**:
+- [x] Create a test where we get recipes from the database
+
+Notes: 
+- Backend
+***
 
 **User Story**: View All Recipes - Emory
 > As a user I want to view recipes after search so I can accomplish picking a recipe I want
 
 **How will it be tested**:
-- [ ] Test UI for recyclerview (?)
-- [ ] Test to see if when an individual recipe is clicked if individual recipe activity will show
+- [x] This is a UI
 
-Notes: 
+Notes:
 - All results from the search
 - RecyclerView
 ***
 
-**User Story**: View Individual Recipes
+**User Story**: Admin - Charlie
+> As an admin I want to be able to input weekly sales ad into the database so that user can search for new ingredients
+
+**How will it be tested**:
+- [x] If newly sale items are updated on the search by ingredients page
+
+Notes:
+- Only the admin has the ability to input weekly sales
+***
+
+## Iteration 3 ()
+
+**User Story**: View Individual Recipes - Debbie
 > As a user I want to view a specific recipe after search so I can view the directions for the recipe.
 
 **How will it be tested**:
-- [ ] This is a UI. No test required.
+- [x] This is a UI. No test required.
 
 Notes: 
 - Displays a particular recipe's information
@@ -104,50 +128,33 @@ Notes:
 > As a user I want to view a page where I can upload my own recipe
 
 **How will it be tested**:
-- [ ] This is a UI. No test required.
+- [x] This is a UI. No test required.
 
-Notes: 
+Notes:
 - Front end
 - XML so that user can input recipe texts
 ***
 
-**User Story**: Upload Recipe to DAO - Cathy
-> As a user I want to upload a recipe so I can accomplsh sharing my recipe with other users.
-
-**How will it be tested**:
-- [ ] Check to see if the query is working
-
-Notes: 
-- Backend
-***
-
-**User Story**: View All Ingredients (from the ads) - Cathy
-> As a user I want to search weekly store ads so I can accomplish searching for a recipe based off of sale items.
-
-**How will it be tested**:
-- [ ] This is a UI. No test required.
-
-Notes: 
-- Front End - RecyclerView
-***
-
-**User Story**: Search By Ingredients (from the ads) - Charlie
+**User Story**: Search By Ingredients (front end) - Cathy
 > As a user I want to search weekly store ads so I can accomplish searching for a recipe based off of sale items
 
 **How will it be tested**:
-- [ ] DAO test to see if query worked
+- [x] DAO test to see if query worked
 
-Notes: Back end - Recycler View?
+Notes:
 ***
 
-**User Story**: Admin - Charlie
-> As an admin I want to be able to input weekly sales ad into the database so that user can search for new ingredients 
+
+## Iteration 4 ()
+
+**User Story**: Upload Recipe to DAO - Emory
+> As a user I want to upload a recipe so I can accomplish sharing my recipe with other users.
 
 **How will it be tested**:
-- [ ] If newly sale items are updated on the search by ingredients page
+- [x] Check to see if the query is working
 
 Notes: 
-- Only the admin has the ability to input weekly sales
+- Backend
 ***
 
 ## Mockups

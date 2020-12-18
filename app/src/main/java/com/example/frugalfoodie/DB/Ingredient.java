@@ -1,7 +1,11 @@
 package com.example.frugalfoodie.DB;
 
+import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
+
+import java.io.Serializable;
 
 /**
  * Class for creating ingredient object
@@ -11,19 +15,24 @@ public class Ingredient {
 
     @PrimaryKey(autoGenerate = true)
     private int ingredientId;
+    private String itemName;
     private double price;
     private int quantity;
+    private String unit;
 
     /**
      * Constructor
-     * @param ingredientId - int got ingredient id
-     * @param price - double for price
-     * @param quantity - int for quantity
+     * @param itemName - the name of the ingredient
+     * @param price - the price of the ingredient
+     * @param quantity - how many items in the ingredient
+     * @param unit - String representing lbs, each, etc.
      */
-    public Ingredient(int ingredientId, double price, int quantity) {
+    public Ingredient(String itemName, double price, int quantity, String unit) {
+        this.itemName = itemName;
         this.ingredientId = ingredientId;
         this.price = price;
         this.quantity = quantity;
+        this.unit = unit;
     }
 
     /**
@@ -40,6 +49,22 @@ public class Ingredient {
      */
     public void setIngredientId(int ingredientId) {
         this.ingredientId = ingredientId;
+    }
+
+    /**
+     * Item name getter
+     * @return String - for item name
+     */
+    public String getItemName() {
+        return itemName;
+    }
+
+    /**
+     * Item name setter
+     * @param itemName - String for item name
+     */
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
     }
 
     /**
@@ -72,5 +97,33 @@ public class Ingredient {
      */
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+
+    /**
+     * Unit getter
+     * @return unit - String of the unit
+     */
+    public String getUnit() {
+        return unit;
+    }
+
+    /**
+     * Unit Setter
+     * @param unit - String representing lbs, each, etc.
+     */
+    public void setUnit(String unit) {
+        this.unit = unit;
+    }
+
+    @Override
+    public String toString() {
+        return "Ingredient{" +
+                "ingredientId=" + ingredientId +
+                ", itemName='" + itemName + '\'' +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                ", unit='" + unit + '\'' +
+                '}';
     }
 }

@@ -1,5 +1,6 @@
 package com.example.frugalfoodie;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -16,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
             Button upload = findViewById(R.id.upload);
 
-            Button search = findViewById(R.id.search);
+            Button search = findViewById(R.id.search );
 
             upload.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -36,7 +37,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
         }
 
+        public static Intent getIntent(Context context) {
+            Intent intent = new Intent(context, LandingPage.class);
+            return intent;
         }
+    }
 
 
 
